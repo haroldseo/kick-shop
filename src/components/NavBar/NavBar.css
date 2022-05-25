@@ -9,19 +9,44 @@
 .nav-logo {
   font-weight: 700;
   font-size: 1.5rem;
-  cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   margin-left: 2rem;
-  color: hsl(220, 14%, 75%);
+  height: 100%;
 }
 
 .nav-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-item:before {
+  transition: 300ms;
+  content: "";
+  position: absolute;
+  background-color: hsl(26, 100%, 55%);
+  height: 0%;
+  width: 100%;
+  bottom: 0;
+}
+
+.nav-item:hover:before {
+  height: 5px;
+}
+
+.nav-link {
   font-size: 0.8rem;
   margin: 0 0.8rem;
+  text-decoration: none;
+  color: hsl(220, 14%, 75%);
 }
 
 .nav-cart {
