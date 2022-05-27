@@ -6,34 +6,33 @@ const products = [
   {
     id: 1,
     name: "Nike Air Max 1 Kasina",
-    price: 110,
+    price: "$160",
     image: "https://houseofheat.co/app/uploads/2022/05/Kasina-x-Nike-Air-Max-1-Won-Ang-DQ8475-001-1.jpg",
   },
   {
     id: 2,
     name: "Nike Air Max 1 Patta",
-    price: 90,
-    image:
-      "https://cdn.sanity.io/images/c1chvb1i/production/d0268bccd7885d8660364f707a2e9f5d0dfde776-1100x735.jpg/nike-patta-air-max-1-metallic-silver-monarch-pure-platinum-2_1160x.jpg",
+    price: "$160",
+    image: "https://houseofheat.co/app/uploads/2021/10/patta-nike-air-max-1-DH1348-001-release-date-2.jpg",
   },
   {
     id: 3,
     name: "Nike Air Max 1/97 Sean Wotherspoon",
-    price: 50,
+    price: "$160",
     image:
-      "https://sneakerbardetroit.com/wp-content/uploads/2018/05/Sean-Wotherspoon-Nike-Air-Max-197-Restock-Release-Date.jpg",
+      "https://houseofheat.co/app/uploads/2018/01/Nike-Air-Max-197-Sean-Wotherspoon-AJ4219-400-Release-Date-Price.jpg",
   },
 ];
 
 function Products() {
   return (
-    <>
+    <div className='products-list'>
       {products.map((product) => (
-        <div key={product.id}>
+        <div key={product.id} className='product'>
           <Product product={product} />
         </div>
       ))}
-    </>
+    </div>
   );
 }
 

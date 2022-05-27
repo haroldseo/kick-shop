@@ -1,11 +1,15 @@
 import React from "react";
 
+import "./Product.css";
+
 function Product({ product }) {
   return (
-    <div>
-      <img src={product.image} alt={product.name} />
-      <div>{product.name}</div>
-      <div>{product.price}</div>
+    <div className='product-card'>
+      <img src={product.image} className='product-card__image' alt={product.name} />
+      <div className='product-card__info'>
+        <h1 className='product-card__name'>{product.name}</h1>
+        <span className='product-card__price'>{product.price}</span>
+      </div>
     </div>
   );
 }
