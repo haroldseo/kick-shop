@@ -5,6 +5,7 @@ import axios from "axios";
 import "./App.css";
 import NavBar from "./NavBar/NavBar";
 import Home from "./Home/Home";
+import Products from "./Products/Products";
 
 function App() {
   const [data, setData] = useState([]);
@@ -33,6 +34,7 @@ function App() {
             <NavBar />
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/collections' element={<Products />} />
             </Routes>
           </div>
         </div>
