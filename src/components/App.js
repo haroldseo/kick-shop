@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { commerce } from "../lib/commerce";
 
 import "./App.css";
 import NavBar from "./NavBar/NavBar";
@@ -8,22 +8,22 @@ import Home from "./Home/Home";
 import Products from "./Products/Products";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        setData(response.data);
+        const response = await commerce.products.list();
+        setProducts(response.data);
         console.log(response.data);
       } catch (error) {
         console.log(error);
       }
       setLoading(false);
     };
-    fetchData();
+    fetchProducts();
   }, []);
 
   return (
